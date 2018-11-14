@@ -1,0 +1,25 @@
+package com.cg.ctrl;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class MyHomeController
+{
+	@RequestMapping(value = "/",method = RequestMethod.GET)
+	public String home(Locale locale, Model model)
+	{
+		Date date = new Date();
+		DateFormat dateFormat= DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		String formatttedDate= dateFormat.format(date);
+		model.addAttribute("serverTime", formatttedDate);
+		//return "Login";
+		return "index";
+	}
+}
