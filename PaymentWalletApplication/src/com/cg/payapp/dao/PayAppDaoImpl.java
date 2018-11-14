@@ -40,6 +40,7 @@ public class PayAppDaoImpl implements PayAppDao
 			
 			custMap.put(MobNo, customer);
 			System.out.println("Amount deposited");
+			System.out.println(" Current Updated Amount is:"+currentUpdatedAmount);
 		}
 		else{
 			System.err.println("Sorry Mobile number not found, please enter valid mobile number!");
@@ -63,6 +64,7 @@ public class PayAppDaoImpl implements PayAppDao
 			
 			custMap.put(MobNo, customer);
 			System.out.println("Amount withdrawl successful");
+			System.out.println(" Current Updated Amount is:"+currentUpdatedAmount);
 		}
 		else{
 			System.err.println("Sorry Mobile number not found, please enter valid mobile number!");
